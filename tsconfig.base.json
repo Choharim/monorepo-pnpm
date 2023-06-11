@@ -1,14 +1,22 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "strictNullChecks": true,
-    "esModuleInterop": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "noUnusedLocals": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "jsx": "react-jsx",
-    "moduleResolution": "node"
+    "target": "es6", // compile할 javascript 버전
+    "lib": ["dom", "dom.iterable", "esnext"], // compile에 필요한 내장 라이브러리
+    "incremental": true, // 증분 컴파일 활성화
+    "module": "esnext",
+    "moduleResolution": "node", // 모듈 해석 방법
+    "removeComments": true, // 주석 제거
+    "isolatedModules": true,
+    "noEmit": true, // 컴파일 한 출력 내보내지 않음
+    "jsx": "preserve", // jsx 코드 컴파일 방법 - 그대로 유지
+    "sourceMap": true, // .map 파일 생성 여부 - 브라우저에서 ts 파일이 매핑 파일에 의해 인식되어 디버깅 가능.
+
+    "strict": true, // 모든 엄격한 타입 검사 활성화 (noImplicitAny, noImplicitThis, alwaysStrict, strictNullChecks, strictFunctionTypes)
+
+    "esModuleInterop": true, // CommonJS와 ES 모듈 간의 상호 운용성을 제공
+    "resolveJsonModule": true, // .json import 가능
+
+    "skipLibCheck": true, // 모든 선언 파일(*.d.ts) compile
+    "forceConsistentCasingInFileNames": true // 파일의 이름을 대소문자 구분
   }
 }
