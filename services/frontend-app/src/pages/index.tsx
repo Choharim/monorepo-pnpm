@@ -1,6 +1,20 @@
+import { Button } from "@monorepo/shared-components";
 import Head from "next/head";
 
+const TEST = {
+  test: "test",
+} as const;
+
+enum Test {
+  hi = "hi",
+}
 export default function Home() {
+  const a: string = "a";
+  console.log(a, Test.hi);
+
+  const clickButton = () => {
+    console.log("clicked");
+  };
   return (
     <>
       <Head>
@@ -9,7 +23,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>hi</main>
+      <main>
+        <Button variant="primary" onClick={clickButton}>
+          {TEST.test}
+        </Button>
+      </main>
     </>
   );
 }
